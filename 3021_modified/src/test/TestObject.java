@@ -3,7 +3,6 @@ import java.io.*;
 import java.util.Date;
 
 import base.*;
-import Blog.*;
 import base.User;
 import base.FriendsPost;
 /*
@@ -21,4 +20,5 @@ public class TestObject {
 	}
 	
 }
-*/
+*/import blog.*;
+

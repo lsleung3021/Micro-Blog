@@ -3,10 +3,10 @@ import java.io.*;
 import java.util.Date;
 
 import base.*;
-import Blog.*;
 import base.Post;
 import base.User;
 import base.FriendsPost;
+import blog.*;
 
 public class TestBlog{
 	

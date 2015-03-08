@@ -5,7 +5,7 @@ import java.util.Date;
 
 import org.omg.CORBA.Object;
 
-public class Post {
+public class Post implements Comparable<Post>{
 	
 	private Date date;
 	private String content;
@@ -15,12 +15,19 @@ public class Post {
 		this.content = content;		
 	}
 	
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
+	}
 	public String getContent(){
 		return this.content;
 	}
 	public void setContent(String content){
 		this.content = content;	
 	}
+	
 	@Override
 	public String toString() {
 		return "Post [date=" + date + ", content=" + content + "]";
@@ -61,6 +68,7 @@ public class Post {
 		result = prime * result + ((date == null) ? 0 : date.hashCode());
 		return result;
 	}
+	@Override
 	public boolean contains(String keyword){
 		if(content.contains(keyword)){
 			return true;
@@ -69,5 +77,12 @@ public class Post {
 			return false;
 		}
 		
+	}
+	@Override
+	public int compareTo(Post p){
+		int result = 0;
+		result = this.date.compareTo(p.date);
+	    return result;
+	    
 	}
 }

@@ -3,7 +3,7 @@ package base;
 import org.omg.CORBA.Object;
 
 
-public class User {
+public class User implements Comparable<User>{
 	private int userID;
 	private String userName;
 	private String userEmail;
@@ -95,6 +95,19 @@ public class User {
 			return false;
 		}
 		
+	}
+	@Override
+	public int compareTo(User u){
+		final int greater = 1;
+		final int less = -1;
+		final int equal = 0;
+		
+		if (this == u) return equal;
+		
+		if (this.userID < u.userID) return less;
+	    if (this.userID > u.userID) return greater;
+	    
+	    return equal;
 	}
 	
 }

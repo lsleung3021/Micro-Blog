@@ -1,6 +1,7 @@
-package Blog;
+package blog;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import org.omg.CORBA.Object;
 
@@ -81,6 +82,20 @@ public class Blog{
 		result = prime * result + ((user == null) ? 0 : user.hashCode());
 		return result;
 	}
-	
+	public void search(int month,String somemone) {
+		
+		Calendar cal = Calendar.getInstance();
+		// search from all posts
+		for(Post p : allPosts) {
+			cal.setTime(p.getDate());
+			int postMonth = cal.get(Calendar.MONTH);
+			System.out.println(postMonth);
+			int actualMonth = postMonth+1;
+			System.out.println(actualMonth);
+			if((actualMonth) == month && (p.getContent().contains(someone))){
+				
+			}
+		}
+	}
 	
 }
